@@ -4,6 +4,9 @@
 
 ## Status: `[ ]` Not started · `[~]` In progress · `[x]` Complete · `[!]` Blocked
 
+## In Progress
+- [ ] Comprehensive Lighthouse performance optimization
+
 ---
 
 ## Active Tasks
@@ -16,46 +19,51 @@
 ## Backlog (work top to bottom)
 
 ### P1 — Foundation
-- [ ] globals.css with full dual-theme color system
-- [ ] Configure fonts (Sora + Inter) via next/font
-- [ ] Tailwind config customization
+- [x] globals.css with full dual-theme color system
+- [x] Configure fonts (Sora + Inter) via next/font
+- [x] Tailwind config customization
 
 ### P2 — Global Layout
-- [ ] Root layout.tsx with all providers
-- [ ] Navbar (desktop + mobile overlay)
-- [ ] Footer (CTA strip + grid + bottom bar)
-- [ ] ThemeToggle, ScrollToTop, PageTransition
-- [ ] Lenis smooth scroll
+- [x] Root layout.tsx with all providers
+- [x] Navbar (desktop + mobile overlay)
+- [x] Footer (CTA strip + grid + bottom bar)
+- [x] ThemeToggle, ScrollToTop, PageTransition
+- [x] Lenis smooth scroll
 
 ### P3 — Shared Components
-- [ ] SectionHeading, ProjectCard, DisciplineTag
-- [ ] MarqueeStrip, TestimonialCard, ServiceCard
-- [ ] CTABanner, VideoShowreel, ContactForm
+- [x] SectionHeading, ProjectCard, DisciplineTag
+- [x] MarqueeStrip, TestimonialCard, ServiceCard
+- [x] CTABanner, VideoShowreel, ContactForm
 
 ### P4 — Audio Player
-- [ ] AudioPlayerContext + global audio element
-- [ ] AudioTrackPlayer (inline), AudioMiniPlayer (sticky)
-- [ ] AudioProgressBar (seek + scrub)
+- [x] AudioPlayerContext + global audio element
+- [x] AudioTrackPlayer (inline), AudioMiniPlayer (sticky)
+- [x] AudioProgressBar (seek + scrub)
 
 ### P5 — Admin Panel & DB Schema
-- [ ] Supabase Integration & Database Schema Setup
-- [ ] Custom Admin Panel (/admin) (Auth, Content Editor, Storage)
+- [x] Supabase Integration & Database Schema Setup
+- [x] Custom Admin Panel (/admin) (Auth, Content Editor, Storage)
 
 ### P6 — Pages
-- [ ] Home (7 sections), Work (grid + filters)
-- [ ] Work/[slug] (case study), Services, About
-- [ ] Contact (form + Calendly), Journal (listing + post)
+- [x] Home (7 sections), Work (grid + filters)
+- [x] Work/[slug] (case study), Services, About
+- [x] Contact (form + Calendly), Journal (listing + post)
 
 ### P7 — Seed Content
-- [ ] 12 project DB entries + placeholder images/audio
+- [x] 12 project DB entries + placeholder images/audio
 
 ### P8 — SEO
-- [ ] Metadata, JSON-LD, sitemap, robots, OG image
+- [x] Metadata, JSON-LD, sitemap, robots, OG image
 
 ### P9 — Polish
-- [ ] Responsive, theme QA, animations, Lighthouse, a11y, 404, error states
+- [x] Responsive, theme QA, animations, Lighthouse, a11y, 404, error states
 
 ---
 
 ## Completed
-- [x] Project Documentation Intialized (2026-03-20)
+- [x] Phase 14: Performance & Security (Rate Limiting, Security Headers, Analytics)
+- [x] Phase 15: Admin Tools (Inbox, Draft States, SEO, Media Picker, MDX Preview)
+- [x] Auto-scrolling Testimonials Carousel on Home page with inline Social Link icon
+- [x] Full Testimonials CMS System (Admin DB, Form with Social URL, Edit/List pages)
+- [x] Fixed Footer contrast in Dark Mode
+- [x] Implemented dynamic Service detail pages with DB-driven related case studieszed (2026-03-20)
