@@ -67,6 +67,15 @@ export function TestimonialCarousel({ testimonials }: { testimonials: Testimonia
     }
   }, [api]);
 
+  const plugin = React.useRef(
+    AutoScroll({
+      speed: 1,
+      startDelay: 0,
+      stopOnInteraction: false, // Ensures it resumes after manual drag
+      stopOnMouseEnter: true,
+    })
+  );
+
   return (
     <Carousel
       setApi={setApi}
@@ -74,14 +83,7 @@ export function TestimonialCarousel({ testimonials }: { testimonials: Testimonia
         align: "start",
         loop: true,
       }}
-      plugins={[
-        AutoScroll({
-          speed: 1,
-          startDelay: 0,
-          stopOnInteraction: false, // Ensures it resumes after manual drag
-          stopOnMouseEnter: true,
-        }),
-      ]}
+      plugins={[plugin.current]}
       className="w-full"
     >
       <CarouselContent className="-ml-4 md:-ml-8">

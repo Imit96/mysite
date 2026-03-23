@@ -10,6 +10,7 @@ All meaningful changes documented in reverse chronological order (newest first).
 
 ## Log
 
+- **2026-03-24 — FIX:** Stabilized Embla carousel AutoScroll plugin in `TestimonialCarousel` to prevent recreation and freezing in Vercel production builds.
 - **2026-03-23 — FEATURE:** Upgraded the Admin Area (Phase 15) with an integrated Unified Inbox, Draft States & Advanced SEO controls for content, a visual Supabase Media Picker modal across all forms, and a live side-by-side MDX previewer.
 - **2026-03-23 — FIX:** Resolved React hydration errors caused by Base UI DialogTrigger nesting buttons and fixed routing structures within the admin panel.
 - **2026-03-20 — CONTENT:** Seeded the Supabase `journal` table with 4 high-quality initial MDX entries.
