@@ -15,6 +15,8 @@ import Link from "next/link";
 import { Play } from "lucide-react";
 import { getAllTestimonials } from "@/lib/mdx";
 
+export const revalidate = 60; // Revalidate the homepage every 60 seconds to fetch fresh testimonials
+
 export default async function Home() {
   const testimonials = await getAllTestimonials();
   return (
