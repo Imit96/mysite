@@ -49,22 +49,18 @@ export function TestimonialCarousel({ testimonials }: { testimonials: Testimonia
 
   const handleScrollBackward = React.useCallback(() => {
     if (!api) return;
+    const autoScroll = plugin.current;
+    autoScroll.stop();
     api.scrollPrev();
-    const autoScroll = api.plugins().autoScroll;
-    if (autoScroll) {
-      autoScroll.options.direction = "backward";
-      autoScroll.play();
-    }
+    autoScroll.play();
   }, [api]);
 
   const handleScrollForward = React.useCallback(() => {
     if (!api) return;
+    const autoScroll = plugin.current;
+    autoScroll.stop();
     api.scrollNext();
-    const autoScroll = api.plugins().autoScroll;
-    if (autoScroll) {
-      autoScroll.options.direction = "forward";
-      autoScroll.play();
-    }
+    autoScroll.play();
   }, [api]);
 
   const plugin = React.useRef(
