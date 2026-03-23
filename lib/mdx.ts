@@ -1,13 +1,15 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'http://localhost:54321';
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'public-anon-key';
-
-// Initialize a standard stateless client for public data fetching.
-// This prevents Next.js from bailing out of Static Generation/ISR due to cookies().
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize a standard stateless client lazily
+function getSupabase() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+  if (!url) throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL");
+  return createClient(url, key);
+}
 
 export async function getAllProjects() {
+  const supabase = getSupabase();
   const { data, error } = await supabase
     .from('projects')
     .select('*')
@@ -26,6 +28,7 @@ export async function getAllProjects() {
 }
 
 export async function getProjectBySlug(slug: string) {
+  const supabase = getSupabase();
   const { data, error } = await supabase
     .from('projects')
     .select('*')
@@ -52,6 +55,7 @@ export async function getProjectBySlug(slug: string) {
 }
 
 export async function getAllPosts() {
+  const supabase = getSupabase();
   const { data, error } = await supabase
     .from('journal')
     .select('*')
@@ -70,6 +74,7 @@ export async function getAllPosts() {
 }
 
 export async function getPostBySlug(slug: string) {
+  const supabase = getSupabase();
   const { data, error } = await supabase
     .from('journal')
     .select('*')
@@ -95,6 +100,7 @@ export async function getPostBySlug(slug: string) {
 }
 
 export async function getAllTestimonials() {
+  const supabase = getSupabase();
   const { data, error } = await supabase
     .from('testimonials')
     .select('*')
