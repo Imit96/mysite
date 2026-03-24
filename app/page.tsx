@@ -10,6 +10,7 @@ import { ProjectCard } from "@/components/shared/project-card";
 import { ServiceCard } from "@/components/shared/service-card";
 import { CTABanner } from "@/components/shared/cta-banner";
 import { TestimonialCarousel } from "@/components/shared/testimonial-carousel";
+import { HeroVideoBackground } from "@/components/shared/hero-video-background";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { Play, Search } from "lucide-react";
@@ -31,8 +32,11 @@ export default async function Home() {
           <div className="w-1/4 h-full" />
         </div>
         
-        {/* Abstract gradient */}
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background" />
+        {/* Video Background with Scroll fade effect */}
+        <HeroVideoBackground videoSrc="/images/about/video/site.mp4" />
+
+        {/* Abstract subtle overlay gradient */}
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background/80 to-background pointer-events-none" />
 
         {/* Desktop Fixed Elements (hidden on mobile, visible lg+) */}
         
