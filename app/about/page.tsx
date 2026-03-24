@@ -25,10 +25,10 @@ export default function AboutPage() {
           </div>
           
           <div className="flex flex-col">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold tracking-tight mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-8">
               I'm Ojo Oluwatimileyin.
             </h1>
-            <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
+            <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
                 I'm a Creative Director & Developer based in Lagos, Nigeria. I design, build, and produce digital experiences across every medium — from code to camera to sound.
               </p>
@@ -44,22 +44,22 @@ export default function AboutPage() {
 
         {/* PHILOSOPHY */}
         <div className="mb-32">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-12">What I Believe</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight font-heading font-bold mb-12">What I Believe</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             <div className="flex flex-col">
-              <h3 className="text-xl font-bold mb-4 font-heading">Integration Over Isolation</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 font-heading">Integration Over Isolation</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
                 The best work happens when strategy, design, code, and content are shaped by the same mind. Handoffs create gaps. Unified vision creates coherence.
               </p>
             </div>
             <div className="flex flex-col">
-              <h3 className="text-xl font-bold mb-4 font-heading">Craft Over Speed</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 font-heading">Craft Over Speed</h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
                 I'd rather deliver something exceptional on a thoughtful timeline than something average on a rushed one. Quality compounds.
               </p>
             </div>
             <div className="flex flex-col">
-              <h3 className="text-xl font-bold mb-4 font-heading">Partnership Over Transactions</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 font-heading">Partnership Over Transactions</h3>
               <p className="text-muted-foreground leading-relaxed">
                 I invest in understanding your business, your audience, and your goals. The projects that work best are the ones where I'm treated as a creative partner, not a vendor.
               </p>
@@ -69,7 +69,7 @@ export default function AboutPage() {
 
         {/* SKILLS */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-12">Tools & Technologies</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight font-heading font-bold mb-12">Tools & Technologies</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
             <div>
               <h3 className="text-sm font-bold uppercase tracking-wider mb-6 border-b border-border pb-2">Development</h3>

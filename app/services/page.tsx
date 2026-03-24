@@ -15,8 +15,8 @@ export default function ServicesPage() {
       <div className="pt-32 pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
         {/* HERO */}
         <div className="mb-24">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold tracking-tight mb-6">Services</h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-6">Services</h1>
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl">
             I offer end-to-end creative and technical solutions — individually or as integrated packages.
           </p>
         </div>
@@ -39,10 +39,10 @@ export default function ServicesPage() {
                       <span className="text-2xl font-bold font-mono text-muted-foreground w-12 border-b-2 border-primary pb-2">
                         0{index + 1}
                       </span>
-                      <h2 className="text-3xl md:text-4xl font-heading font-bold">{svc.title}</h2>
+                      <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold">{svc.title}</h2>
                     </div>
                     
-                    <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                    <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
                       {svc.description}
                     </p>
                     

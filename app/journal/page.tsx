@@ -17,8 +17,8 @@ export default async function JournalPage() {
       <div className="pt-32 pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full flex-grow">
         {/* HERO */}
         <div className="mb-16">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold tracking-tight mb-6">Journal</h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-6">Journal</h1>
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl">
             Thoughts on design, development, creativity, and building things that matter.
           </p>
         </div>
