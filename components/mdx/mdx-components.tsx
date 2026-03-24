@@ -59,6 +59,18 @@ export const mdxComponents: MDXComponents = {
       />
     </div>
   ),
+  YouTubeEmbed: ({ id, title }: { id: string; title?: string }) => (
+    <div className="my-10 w-full overflow-hidden rounded-2xl bg-muted aspect-video relative shadow-lg">
+      <iframe
+        className="absolute inset-0 w-full h-full"
+        src={`https://www.youtube.com/embed/${id}`}
+        title={title || "YouTube video player"}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
+    </div>
+  ),
   ImageGallery: ({ images }: { images: string[] }) => (
     <ProjectGallery images={images || []} />
   ),

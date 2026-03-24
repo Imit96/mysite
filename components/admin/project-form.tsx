@@ -347,6 +347,10 @@ export function ProjectForm({ initialData }: { initialData: any | null }) {
                           <code className="block mb-1 text-primary/80">&lt;AudioTrackPlayer src="/track.mp3" title="Song" /&gt;</code>
                           Playable audio block injection.
                         </li>
+                        <li>
+                          <code className="block mb-1 text-primary/80">&lt;YouTubeEmbed id="cx4VkoDZY4I" /&gt;</code>
+                          Responsive cinematic YouTube iframe.
+                        </li>
                       </ul>
                     </div>
                   </div>
