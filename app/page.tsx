@@ -167,7 +167,7 @@ export default async function Home() {
               slug="nova-saas-platform"
               title="Nova SaaS Platform"
               description="End-to-end design and development of a B2B analytics platform."
-              image=""
+              image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop"
               tags={[
                 { label: "Design", variant: "design" },
                 { label: "Development", variant: "development" }
@@ -179,7 +179,7 @@ export default async function Home() {
               slug="pulse-rebrand"
               title="Pulse Agency Rebrand"
               description="Complete brand overhaul for a creative agency — from strategy to visual identity."
-              image=""
+              image="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1470&auto=format&fit=crop"
               tags={[
                 { label: "Brand Strategy", variant: "brand" }
               ]}
@@ -190,7 +190,7 @@ export default async function Home() {
               slug="urban-light-series"
               title="Urban Light Series"
               description="A photography series exploring light, shadow, and architecture in Lagos."
-              image=""
+              image="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1471&auto=format&fit=crop"
               tags={[
                 { label: "Photography", variant: "photo" }
               ]}
@@ -201,7 +201,7 @@ export default async function Home() {
               slug="midnight-frequencies-ep"
               title="Midnight Frequencies EP"
               description="A 5-track EP blending Afro-electronic and ambient textures."
-              image=""
+              image="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1470&auto=format&fit=crop"
               tags={[
                 { label: "Music", variant: "music" }
               ]}
