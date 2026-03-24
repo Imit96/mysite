@@ -12,7 +12,7 @@ import { CTABanner } from "@/components/shared/cta-banner";
 import { TestimonialCarousel } from "@/components/shared/testimonial-carousel";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-import { Play } from "lucide-react";
+import { Play, Search } from "lucide-react";
 import { getAllTestimonials } from "@/lib/mdx";
 
 export const revalidate = 60; // Revalidate the homepage every 60 seconds to fetch fresh testimonials
@@ -21,30 +21,82 @@ export default async function Home() {
   const testimonials = await getAllTestimonials();
   return (
     <div className="flex flex-col w-full">
-      {/* SECTION 1: HERO */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center px-6 text-center overflow-hidden pt-20">
-        {/* Abstract gradient background */}
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
+      {/* SECTION 1: HERO (Redesigned matching reference) */}
+      <section className="relative h-[calc(100svh-6rem)] md:h-[calc(100svh-5rem)] min-h-[500px] w-full flex items-center justify-center overflow-hidden">
+        {/* Background Grid Lines to match reference image */}
+        <div className="absolute inset-0 pointer-events-none flex w-full max-w-[100vw] justify-between px-0 z-0 opacity-40">
+          <div className="w-1/4 h-full border-r border-border" />
+          <div className="w-1/4 h-full border-r border-border" />
+          <div className="w-1/4 h-full border-r border-border" />
+          <div className="w-1/4 h-full" />
+        </div>
         
-        <div className="max-w-4xl mx-auto flex flex-col items-center z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6">
-            Creative Director & Developer
+        {/* Abstract gradient */}
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background" />
+
+        {/* Desktop Fixed Elements (hidden on mobile, visible lg+) */}
+        
+        {/* Left Side: 001 Marker */}
+        <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 items-center z-10">
+          <span className="text-xs font-medium tracking-widest text-muted-foreground mr-4">001</span>
+        </div>
+
+        {/* Right Side: / 007 Marker */}
+        <div className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 items-center z-10">
+          <span className="text-xs font-medium tracking-widest text-muted-foreground">/ 007</span>
+        </div>
+        
+        {/* Bottom Left: Showreel Thumbnail / Variant */}
+        <div className="hidden lg:flex absolute left-8 bottom-12 z-10 w-48 h-24 bg-muted border border-border group overflow-hidden cursor-pointer">
+           <Link href="#showreel" className="w-full h-full relative block">
+              {/* Fake video thumbnail placeholder */}
+              <div className="absolute inset-0 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <Play className="w-6 h-6 text-foreground/50 group-hover:text-foreground mb-1" />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <span className="text-xs font-bold tracking-widest text-foreground mix-blend-difference drop-shadow-md">PLAY REEL</span>
+              </div>
+           </Link>
+        </div>
+
+        {/* Bottom Right: Description (mimicking Product Details) */}
+        <div className="hidden lg:flex absolute right-[4vw] bottom-12 z-10 flex-col items-start w-[240px]">
+          <h3 className="text-sm font-bold uppercase tracking-widest mb-2">CREATIVE PARTNER</h3>
+          <p className="text-xs text-muted-foreground mb-2">Designer, Developer, Producer</p>
+          <p className="text-sm leading-relaxed text-foreground/80">
+            I design, build, and produce digital experiences — from code to camera to sound, all under one roof.
           </p>
-          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-heading font-bold tracking-tight leading-[1.05] mb-8">
-            OJO OLUWATIMILEYIN<span className="text-primary">.</span>
-          </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-[600px] mb-12 leading-relaxed">
-            I design, build, and produce digital experiences — from code to camera to sound.
-          </p>
+        </div>
+
+        {/* Bottom Center: Scroll Down */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <span className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground mix-blend-difference">Scroll down</span>
+        </div>
+
+        {/* Main Center Content */}
+        <div className="relative z-20 flex flex-col items-center justify-center w-full px-6 container mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000">
           
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Link href="/work" className={buttonVariants({ size: "lg", className: "rounded-full px-10 h-14 text-lg" })}>
-              View My Work
-            </Link>
-            <Link href="#showreel" className={buttonVariants({ variant: "outline", size: "lg", className: "rounded-full px-10 h-14 text-lg group bg-background/50 backdrop-blur-sm border-border" })}>
-              <Play className="w-5 h-5 mr-2" />
-              Watch Showreel
-            </Link>
+          <h1 className="text-5xl sm:text-7xl md:text-[6rem] lg:text-[7rem] xl:text-[8rem] font-heading font-bold tracking-tighter leading-[0.9] text-center mb-12 drop-shadow-sm text-foreground max-w-[1200px]">
+            OJO OLUWATIMILEYIN
+          </h1>
+
+          {/* Search-bar style CTA matching the reference */}
+          <Link href="/work" className="group relative w-full max-w-md flex items-center justify-between py-4 border-b border-foreground/30 hover:border-foreground transition-colors cursor-pointer bg-transparent">
+            <div className="flex items-center gap-4">
+              <span className="text-foreground/50 group-hover:text-foreground transition-colors">
+                <Search className="w-5 h-5" />
+              </span>
+              <span className="text-sm md:text-base font-medium text-foreground/70 group-hover:text-foreground transition-colors">Click to explore my work...</span>
+            </div>
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-foreground/50 group-hover:text-foreground transition-colors">Portfolio</span>
+          </Link>
+          
+          {/* Mobile Fallback Bio (visible only on small screens) */}
+          <div className="lg:hidden mt-16 text-center max-w-sm flex flex-col items-center">
+             <h3 className="text-xs font-bold uppercase tracking-widest mb-2 text-primary">Creative Partner</h3>
+             <p className="text-sm text-muted-foreground leading-relaxed">
+               I design, build, and produce digital experiences — from code to camera to sound.
+             </p>
           </div>
         </div>
       </section>
