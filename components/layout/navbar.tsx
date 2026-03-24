@@ -97,7 +97,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="fixed inset-0 z-30 bg-background flex flex-col pt-24 px-6 pb-12"
+            className="fixed inset-0 z-30 bg-background/80 backdrop-blur-2xl flex flex-col pt-24 px-6 pb-12"
           >
             <nav className="flex flex-col space-y-6 mt-8">
               {NAV_LINKS.map((link, i) => (
