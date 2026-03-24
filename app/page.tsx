@@ -76,7 +76,7 @@ export default async function Home() {
         {/* Main Center Content */}
         <div className="relative z-20 flex flex-col items-center justify-center w-full px-6 container mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000">
           
-          <h1 className="text-5xl sm:text-7xl md:text-[6rem] lg:text-[7rem] xl:text-[8rem] font-heading font-bold tracking-tighter leading-[0.9] text-center mb-12 drop-shadow-sm text-foreground max-w-[1200px]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] font-heading font-bold tracking-tighter leading-[0.9] text-center mb-8 drop-shadow-sm text-foreground max-w-[1000px]">
             OJO OLUWATIMILEYIN
           </h1>
 
@@ -114,8 +114,8 @@ export default async function Home() {
       />
 
       {/* SECTION 3: SHOWREEL / INTRODUCTION */}
-      <section id="showreel" className="py-24 md:py-32 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section id="showreel" className="py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <VideoShowreel 
             videoSrc="/videos/showreel.mp4" 
             posterSrc=""
@@ -125,7 +125,7 @@ export default async function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight mb-6">
               A multidisciplinary creative who sees the whole picture.
             </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-8">
+            <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
               <p>
                 Most creatives specialize in one thing. I chose to master several — because the best digital experiences aren't built in silos. They're designed, developed, branded, photographed, filmed, and scored by someone who understands how all the pieces connect.
               </p>
@@ -141,10 +141,10 @@ export default async function Home() {
       </section>
 
       {/* SECTION 4: SELECTED WORK */}
-      <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
-        <div className="mb-16">
+      <section className="py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
+        <div className="mb-12">
           <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">FEATURED WORK</p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight mb-4">
             Projects that span every medium.
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
@@ -200,10 +200,10 @@ export default async function Home() {
       </section>
 
       {/* SECTION 5: SERVICES */}
-      <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 max-w-5xl mx-auto w-full border-t border-border">
-        <div className="mb-16 md:mb-20 text-center">
+      <section className="py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-5xl mx-auto w-full border-t border-border">
+        <div className="mb-12 md:mb-16 text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">WHAT I OFFER</p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight">
             Solutions designed, built, and produced under one roof.
           </h2>
         </div>
@@ -244,11 +244,11 @@ export default async function Home() {
       </section>
 
       {/* SECTION 6: TESTIMONIALS */}
-      <section className="py-24 md:py-32 bg-muted border-y border-border overflow-hidden w-full flex flex-col items-center">
+      <section className="py-16 md:py-24 bg-muted border-y border-border overflow-hidden w-full flex flex-col items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">KIND WORDS</p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight">
               What clients and collaborators say.
             </h2>
           </div>
