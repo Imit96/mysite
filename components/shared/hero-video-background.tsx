@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 interface HeroVideoBackgroundProps {
@@ -8,20 +7,14 @@ interface HeroVideoBackgroundProps {
 }
 
 export function HeroVideoBackground({ videoSrc }: HeroVideoBackgroundProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  // Track the scroll progress relative to this specific container
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
+  // Read the global scroll position since the hero is always at the absolute top of the page
+  const { scrollY } = useScroll();
 
-  // Fade opacity from 1 down to 0 as the user scrolls past the hero section
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [0.3, 0]); // Max opacity 0.3 so text is readable
+  // Map 0px -> 600px of scroll distance to an opacity fade from 0.5 -> 0
+  const opacity = useTransform(scrollY, [0, 600], [0.5, 0]);
 
   return (
     <motion.div 
-      ref={containerRef}
       className="absolute inset-0 w-full h-full -z-20 overflow-hidden pointer-events-none"
       style={{ opacity }}
     >
@@ -33,7 +26,7 @@ export function HeroVideoBackground({ videoSrc }: HeroVideoBackgroundProps) {
         playsInline
         className="object-cover w-full h-full"
       />
-      {/* Optional dark overlay to ensure text contrast */}
+      {/* Dark overlay to ensure text contrast */}
       <div className="absolute inset-0 bg-background/50 mix-blend-multiply" />
     </motion.div>
   );
