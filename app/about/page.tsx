@@ -2,6 +2,7 @@ import { CTABanner } from "@/components/shared/cta-banner";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import { FadeIn } from "@/components/shared/fade-in";
 
 export const metadata = {
   title: "About | Ojo Oluwatimileyin",
@@ -13,7 +14,7 @@ export default function AboutPage() {
     <div className="flex flex-col w-full">
       <div className="pt-32 pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
         {/* HERO */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20 items-center mb-32">
+        <FadeIn className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20 items-center mb-32">
           <div className="relative aspect-[3/4] w-full max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-xl bg-muted">
             <Image
               src="/images/about/portrait.jpg"
@@ -40,38 +41,42 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-        </div>
+        </FadeIn>
 
         {/* PHILOSOPHY */}
         <div className="mb-32">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight font-heading font-bold mb-12">What I Believe</h2>
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight font-heading font-bold mb-12">What I Believe</h2>
+          </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            <div className="flex flex-col">
+            <FadeIn delay={0.1} className="flex flex-col">
               <h3 className="text-xl md:text-2xl font-bold mb-4 font-heading">Integration Over Isolation</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
                 The best work happens when strategy, design, code, and content are shaped by the same mind. Handoffs create gaps. Unified vision creates coherence.
               </p>
-            </div>
-            <div className="flex flex-col">
+            </FadeIn>
+            <FadeIn delay={0.2} className="flex flex-col">
               <h3 className="text-xl md:text-2xl font-bold mb-4 font-heading">Craft Over Speed</h3>
               <p className="text-base text-muted-foreground leading-relaxed">
                 I'd rather deliver something exceptional on a thoughtful timeline than something average on a rushed one. Quality compounds.
               </p>
-            </div>
-            <div className="flex flex-col">
+            </FadeIn>
+            <FadeIn delay={0.3} className="flex flex-col">
               <h3 className="text-xl md:text-2xl font-bold mb-4 font-heading">Partnership Over Transactions</h3>
               <p className="text-muted-foreground leading-relaxed">
                 I invest in understanding your business, your audience, and your goals. The projects that work best are the ones where I'm treated as a creative partner, not a vendor.
               </p>
-            </div>
+            </FadeIn>
           </div>
         </div>
 
         {/* SKILLS */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight font-heading font-bold mb-12">Tools & Technologies</h2>
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight font-heading font-bold mb-12">Tools & Technologies</h2>
+          </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
-            <div>
+            <FadeIn delay={0.1}>
               <h3 className="text-sm font-bold uppercase tracking-wider mb-6 border-b border-border pb-2">Development</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>React, Next.js, TypeScript</li>
@@ -80,8 +85,8 @@ export default function AboutPage() {
                 <li>REST APIs, GraphQL</li>
                 <li>Git, Vercel, AWS</li>
               </ul>
-            </div>
-            <div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
               <h3 className="text-sm font-bold uppercase tracking-wider mb-6 border-b border-border pb-2">Design</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>Figma, Framer</li>
@@ -90,8 +95,8 @@ export default function AboutPage() {
                 <li>Design Systems</li>
                 <li>Responsive Design</li>
               </ul>
-            </div>
-            <div>
+            </FadeIn>
+            <FadeIn delay={0.3}>
               <h3 className="text-sm font-bold uppercase tracking-wider mb-6 border-b border-border pb-2">Brand</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>Brand Strategy</li>
@@ -100,8 +105,8 @@ export default function AboutPage() {
                 <li>Brand Guidelines</li>
                 <li>Market Research</li>
               </ul>
-            </div>
-            <div>
+            </FadeIn>
+            <FadeIn delay={0.1}>
               <h3 className="text-sm font-bold uppercase tracking-wider mb-6 border-b border-border pb-2">Photography & Video</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>Canon / Sony</li>
@@ -110,8 +115,8 @@ export default function AboutPage() {
                 <li>After Effects, DaVinci Resolve</li>
                 <li>Drone Operation</li>
               </ul>
-            </div>
-            <div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
               <h3 className="text-sm font-bold uppercase tracking-wider mb-6 border-b border-border pb-2">Audio & Music</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>Ableton Live, Logic Pro, FL Studio</li>
@@ -119,17 +124,19 @@ export default function AboutPage() {
                 <li>Mixing & Mastering</li>
                 <li>MIDI, Synthesis</li>
               </ul>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </div>
 
-      <CTABanner 
-         title="Want to work together?"
-         subtitle="I am currently taking on new projects."
-         primaryButtonText="Reach Out"
-         primaryButtonHref="/contact"
-      />
+      <FadeIn>
+        <CTABanner 
+           title="Want to work together?"
+           subtitle="I am currently taking on new projects."
+           primaryButtonText="Reach Out"
+           primaryButtonHref="/contact"
+        />
+      </FadeIn>
     </div>
   );
 }

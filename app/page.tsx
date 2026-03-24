@@ -111,16 +111,18 @@ export default async function Home() {
       </section>
 
       {/* SECTION 2: MARQUEE STRIP */}
-      <MarqueeStrip 
-        items={[
-          "Full-Stack Development", 
-          "UI/UX Design", 
-          "Brand Strategy", 
-          "Photography", 
-          "Videography", 
-          "Music Production"
-        ]} 
-      />
+      <FadeIn delay={0.2}>
+        <MarqueeStrip 
+          items={[
+            "Full-Stack Development", 
+            "UI/UX Design", 
+            "Brand Strategy", 
+            "Photography", 
+            "Videography", 
+            "Music Production"
+          ]} 
+        />
+      </FadeIn>
 
       {/* SECTION 3: SHOWREEL / INTRODUCTION */}
       <section id="showreel" className="py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
@@ -272,29 +274,31 @@ export default async function Home() {
 
       {/* SECTION 6: TESTIMONIALS */}
       <section className="py-16 md:py-24 bg-muted border-y border-border overflow-hidden w-full flex flex-col items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+        <FadeIn className="max-w-7xl mx-auto px-6 w-full">
           <div className="text-center mb-12">
             <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">KIND WORDS</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight">
               What clients and collaborators say.
             </h2>
           </div>
-        </div>
+        </FadeIn>
 
-        <div className="w-full">
+        <FadeIn delay={0.2} className="w-full">
           <TestimonialCarousel testimonials={testimonials} />
-        </div>
+        </FadeIn>
       </section>
 
       {/* SECTION 7: CTA */}
-      <CTABanner 
-        title="Ready to create something extraordinary?"
-        subtitle="Let's talk about your next project."
-        primaryButtonText="Start a Project"
-        primaryButtonHref="/contact"
-        secondaryButtonText="Book a Call"
-        secondaryButtonHref="https://calendly.com"
-      />
+      <FadeIn>
+        <CTABanner 
+          title="Ready to create something extraordinary?"
+          subtitle="Let's talk about your next project."
+          primaryButtonText="Start a Project"
+          primaryButtonHref="/contact"
+          secondaryButtonText="Book a Call"
+          secondaryButtonHref="https://calendly.com"
+        />
+      </FadeIn>
     </div>
   );
 }

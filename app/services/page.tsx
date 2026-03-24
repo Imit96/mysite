@@ -2,6 +2,7 @@ import { CTABanner } from "@/components/shared/cta-banner";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { SERVICES } from "@/lib/services";
+import { FadeIn } from "@/components/shared/fade-in";
 
 export const metadata = {
   title: "Services | Ojo Oluwatimileyin",
@@ -14,12 +15,12 @@ export default function ServicesPage() {
     <div className="flex flex-col w-full">
       <div className="pt-32 pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
         {/* HERO */}
-        <div className="mb-24">
+        <FadeIn className="mb-24">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-6">Services</h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl">
             I offer end-to-end creative and technical solutions — individually or as integrated packages.
           </p>
-        </div>
+        </FadeIn>
 
         {/* SERVICES LIST */}
         <div className="space-y-32">
@@ -29,7 +30,7 @@ export default function ServicesPage() {
             
             return (
               <section key={svc.id} id={svc.id} className="scroll-m-32">
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start ${isEven ? 'lg:rtl' : ''}`}>
+                <FadeIn className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start ${isEven ? 'lg:rtl' : ''}`}>
                   <div className={`bg-muted rounded-3xl aspect-square lg:aspect-[4/3] flex items-center justify-center ${isEven ? 'lg:order-2' : ''}`}>
                     <Icon className="w-24 h-24 text-primary opacity-50" />
                   </div>
@@ -78,21 +79,23 @@ export default function ServicesPage() {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </FadeIn>
               </section>
             );
           })}
         </div>
       </div>
 
-      <CTABanner 
-         title="Not sure what you need?"
-         subtitle="Book a free discovery call and I'll help you figure it out."
-         primaryButtonText="Book a Call"
-         primaryButtonHref="https://calendly.com"
-         secondaryButtonText="Send a Message"
-         secondaryButtonHref="/contact"
-      />
+      <FadeIn>
+        <CTABanner 
+           title="Not sure what you need?"
+           subtitle="Book a free discovery call and I'll help you figure it out."
+           primaryButtonText="Book a Call"
+           primaryButtonHref="https://calendly.com"
+           secondaryButtonText="Send a Message"
+           secondaryButtonHref="/contact"
+        />
+      </FadeIn>
     </div>
   );
 }

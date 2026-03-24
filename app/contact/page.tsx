@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/shared/contact-form";
 import { Linkedin, Github, Twitter, Instagram, Music } from "lucide-react";
+import { FadeIn } from "@/components/shared/fade-in";
 
 export const metadata = {
   title: "Contact | Ojo Oluwatimileyin",
@@ -11,23 +12,23 @@ export default function ContactPage() {
     <div className="flex flex-col w-full min-h-screen">
       <div className="pt-32 pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full flex-grow">
         {/* HERO */}
-        <div className="mb-16 md:mb-24">
+        <FadeIn className="mb-16 md:mb-24">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-6">
             Let's Create Something.
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl">
             Have a project in mind? Fill out the form below or book a discovery call.
           </p>
-        </div>
+        </FadeIn>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-16 lg:gap-24">
           {/* LEFT: FORM */}
-          <div>
+          <FadeIn delay={0.1}>
             <ContactForm />
-          </div>
+          </FadeIn>
 
           {/* RIGHT: INFO & CALENDLY */}
-          <div className="flex flex-col">
+          <FadeIn delay={0.2} className="flex flex-col">
             <h3 className="text-xl md:text-2xl font-heading font-bold mb-2">Prefer to talk?</h3>
             <p className="text-base text-muted-foreground mb-8">Book a free 30-minute discovery call.</p>
 
@@ -69,7 +70,7 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </div>
