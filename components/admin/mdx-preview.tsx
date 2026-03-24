@@ -4,6 +4,17 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 export function MdxPreview({ content }: { content: string }) {
+  // Pre-process custom MDX components into standard Markdown equivalents for the live preview
+  const processedContent = (content || "")
+    .replace(/<ProjectSection title="([^"]+)">/g, '## $1\n')
+    .replace(/<\/ProjectSection>/g, '\n')
+    .replace(/<YouTubeEmbed id="([^"]+)"[^\/]*\/>/g, '\n\n> 🎥 **YouTube Video Placeholder** *(Renders iframe on live site)*\n> Video ID: `$1`\n\n')
+    .replace(/<AudioTrackPlayer src="([^"]+)"[^\/]*\/>/g, '\n\n> 🎵 **Audio Player Placeholder** *(Renders inline player on live site)*\n> Audio Source: `$1`\n\n')
+    .replace(/<FullWidthImage src="([^"]+)" alt="([^"]+)"[^\/]*\/>/g, '\n![Full Width: $2]($1)\n')
+    .replace(/<ImageGallery images=\{\[(.*?)\]\}[^\/]*\/>/g, '\n\n> 📸 **Image Gallery Placeholder**\n> Images: `$1`\n\n')
+    .replace(/<ImageGrid[^>]*>/g, '')
+    .replace(/<\/ImageGrid>/g, '');
+
   return (
     <div className="prose prose-sm md:prose-base dark:prose-invert max-w-none w-full bg-muted/10 border rounded-lg p-4 sm:p-6 min-h-[400px] sm:min-h-[600px] h-full overflow-y-auto">
       <ReactMarkdown 
@@ -32,7 +43,7 @@ export function MdxPreview({ content }: { content: string }) {
           }
         }}
       >
-        {content || "*No content to preview yet... Start typing to see the magic!*"}
+        {processedContent || "*No content to preview yet... Start typing to see the magic!*"}
       </ReactMarkdown>
     </div>
   );
