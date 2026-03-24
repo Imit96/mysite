@@ -15,9 +15,13 @@ export default function AboutPage() {
         {/* HERO */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20 items-center mb-32">
           <div className="relative aspect-[3/4] w-full max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-xl bg-muted">
-            <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-               No Image
-            </div>
+            <Image
+              src="/images/about/portrait.jpg"
+              alt="Ojo Oluwatimileyin"
+              fill
+              priority
+              className="object-cover"
+            />
           </div>
           
           <div className="flex flex-col">
