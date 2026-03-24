@@ -29,7 +29,8 @@ export function Navbar() {
   }, [pathname])
 
   return (
-    <header
+    <>
+      <header
       className={`fixed top-0 w-full z-40 transition-all duration-300 ease-out ${
         isScrolled
           ? "h-16 bg-background/80 backdrop-blur-md border-b border-border/50"
@@ -89,7 +90,9 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      </header>
+
+      {/* Mobile Menu Overlay - Moved OUTSIDE the header to prevent backdrop-filter containing-block bugs */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -138,6 +141,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   )
 }
