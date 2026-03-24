@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 interface HeroVideoBackgroundProps {
   videoSrc: string;
@@ -12,6 +13,17 @@ export function HeroVideoBackground({ videoSrc }: HeroVideoBackgroundProps) {
 
   // Map 0px -> 600px of scroll distance to an opacity fade from 0.5 -> 0
   const opacity = useTransform(scrollY, [0, 600], [0.5, 0]);
+  
+  // Use a ref to force play to bypass aggressive browser autoplay blocks
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.warn("Video autoplay blocked by browser policy:", error);
+      });
+    }
+  }, []);
 
   return (
     <motion.div 
@@ -19,6 +31,7 @@ export function HeroVideoBackground({ videoSrc }: HeroVideoBackgroundProps) {
       style={{ opacity }}
     >
       <video
+        ref={videoRef}
         src={videoSrc}
         autoPlay
         muted

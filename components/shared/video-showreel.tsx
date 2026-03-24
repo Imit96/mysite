@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Play, Pause } from "lucide-react";
 import { motion } from "framer-motion";
@@ -13,8 +13,18 @@ interface VideoShowreelProps {
 }
 
 export function VideoShowreel({ videoSrc, posterSrc, className }: VideoShowreelProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true); // Default to true per user request
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Auto-play the video robustly on mount
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.warn("Autoplay blocked, falling back to paused state:", error);
+        setIsPlaying(false);
+      });
+    }
+  }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -45,6 +55,7 @@ export function VideoShowreel({ videoSrc, posterSrc, className }: VideoShowreelP
         playsInline
         loop
         muted
+        autoPlay
         onEnded={() => setIsPlaying(false)}
       />
       
