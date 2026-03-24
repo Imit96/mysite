@@ -121,7 +121,7 @@ export default async function Home() {
       <section id="showreel" className="py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <VideoShowreel 
-            videoSrc="/videos/showreel.mp4" 
+            videoSrc="/images/about/video/showreel-animation.mp4" 
             posterSrc=""
           />
           <div className="flex flex-col">
