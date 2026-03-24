@@ -11,6 +11,7 @@ import { ServiceCard } from "@/components/shared/service-card";
 import { CTABanner } from "@/components/shared/cta-banner";
 import { TestimonialCarousel } from "@/components/shared/testimonial-carousel";
 import { HeroVideoBackground } from "@/components/shared/hero-video-background";
+import { FadeIn } from "@/components/shared/fade-in";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { Play, Search } from "lucide-react";
@@ -23,7 +24,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* SECTION 1: HERO (Redesigned matching reference) */}
-      <section className="relative h-[calc(100svh-6rem)] md:h-[calc(100svh-5rem)] min-h-[500px] w-full flex items-center justify-center overflow-hidden">
+      <section className="relative -mt-20 pt-20 h-[100svh] min-h-[500px] w-full flex items-center justify-center overflow-hidden">
         {/* Background Grid Lines to match reference image */}
         <div className="absolute inset-0 pointer-events-none flex w-full max-w-[100vw] justify-between px-0 z-0 opacity-40">
           <div className="w-1/4 h-full border-r border-border" />
@@ -53,11 +54,15 @@ export default async function Home() {
         {/* Bottom Left: Showreel Thumbnail / Variant */}
         <div className="hidden lg:flex absolute left-8 bottom-12 z-10 w-48 h-24 bg-muted border border-border group overflow-hidden cursor-pointer">
            <Link href="#showreel" className="w-full h-full relative block">
-              {/* Fake video thumbnail placeholder */}
-              <div className="absolute inset-0 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <Play className="w-6 h-6 text-foreground/50 group-hover:text-foreground mb-1" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center z-10">
+              <video
+                src="/images/about/video/showreel-animation.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+              />
+              <div className="absolute inset-0 flex items-center justify-center z-10 group-hover:scale-105 transition-transform duration-300">
                 <span className="text-xs font-bold tracking-widest text-foreground mix-blend-difference drop-shadow-md">PLAY REEL</span>
               </div>
            </Link>
@@ -119,7 +124,7 @@ export default async function Home() {
 
       {/* SECTION 3: SHOWREEL / INTRODUCTION */}
       <section id="showreel" className="py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <FadeIn className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <VideoShowreel 
             videoSrc="/images/about/video/showreel-animation.mp4" 
             posterSrc=""
@@ -141,12 +146,12 @@ export default async function Home() {
               More About Me →
             </Link>
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* SECTION 4: SELECTED WORK */}
       <section className="py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
-        <div className="mb-12">
+        <FadeIn className="mb-12">
           <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">FEATURED WORK</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight mb-4">
             Projects that span every medium.
@@ -154,96 +159,114 @@ export default async function Home() {
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
             Each project showcases the full scope of my contribution — from strategy to execution.
           </p>
-        </div>
+        </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
-          <ProjectCard 
-            slug="nova-saas-platform"
-            title="Nova SaaS Platform"
-            description="End-to-end design and development of a B2B analytics platform."
-            image=""
-            tags={[
-              { label: "Design", variant: "design" },
-              { label: "Development", variant: "development" }
-            ]}
-          />
-          <ProjectCard 
-            slug="pulse-rebrand"
-            title="Pulse Agency Rebrand"
-            description="Complete brand overhaul for a creative agency — from strategy to visual identity."
-            image=""
-            tags={[
-              { label: "Brand Strategy", variant: "brand" }
-            ]}
-          />
-          <ProjectCard 
-            slug="urban-light-series"
-            title="Urban Light Series"
-            description="A photography series exploring light, shadow, and architecture in Lagos."
-            image=""
-            tags={[
-              { label: "Photography", variant: "photo" }
-            ]}
-          />
-          <ProjectCard 
-            slug="midnight-frequencies-ep"
-            title="Midnight Frequencies EP"
-            description="A 5-track EP blending Afro-electronic and ambient textures."
-            image=""
-            tags={[
-              { label: "Music", variant: "music" }
-            ]}
-          />
+          <FadeIn delay={0.1}>
+            <ProjectCard 
+              slug="nova-saas-platform"
+              title="Nova SaaS Platform"
+              description="End-to-end design and development of a B2B analytics platform."
+              image=""
+              tags={[
+                { label: "Design", variant: "design" },
+                { label: "Development", variant: "development" }
+              ]}
+            />
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <ProjectCard 
+              slug="pulse-rebrand"
+              title="Pulse Agency Rebrand"
+              description="Complete brand overhaul for a creative agency — from strategy to visual identity."
+              image=""
+              tags={[
+                { label: "Brand Strategy", variant: "brand" }
+              ]}
+            />
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <ProjectCard 
+              slug="urban-light-series"
+              title="Urban Light Series"
+              description="A photography series exploring light, shadow, and architecture in Lagos."
+              image=""
+              tags={[
+                { label: "Photography", variant: "photo" }
+              ]}
+            />
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <ProjectCard 
+              slug="midnight-frequencies-ep"
+              title="Midnight Frequencies EP"
+              description="A 5-track EP blending Afro-electronic and ambient textures."
+              image=""
+              tags={[
+                { label: "Music", variant: "music" }
+              ]}
+            />
+          </FadeIn>
         </div>
 
-        <div className="flex justify-center">
+        <FadeIn direction="up" delay={0.2} className="flex justify-center">
           <Link href="/work" className={buttonVariants({ size: "lg", className: "rounded-full px-10 h-14 text-lg" })}>
             View All Projects →
           </Link>
-        </div>
+        </FadeIn>
       </section>
 
       {/* SECTION 5: SERVICES */}
       <section className="py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-5xl mx-auto w-full border-t border-border">
-        <div className="mb-12 md:mb-16 text-center">
+        <FadeIn className="mb-12 md:mb-16 text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">WHAT I OFFER</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight">
             Solutions designed, built, and produced under one roof.
           </h2>
-        </div>
+        </FadeIn>
 
         <div className="flex flex-col">
-          <ServiceCard 
-            number="01"
-            title="Digital Products"
-            description="End-to-end UI/UX design and full-stack development for web applications."
-            href="/services/digital-products"
-          />
-          <ServiceCard 
-            number="02"
-            title="Brand & Identity"
-            description="Strategic brand development from naming and positioning to complete visual identity systems."
-            href="/services/brand-identity"
-          />
-          <ServiceCard 
-            number="03"
-            title="Visual Content"
-            description="Photography and videography that tells your brand's story with cinematic quality."
-            href="/services/visual-content"
-          />
-          <ServiceCard 
-            number="04"
-            title="Audio & Music"
-            description="Original music production, sound design, and audio branding for any medium."
-            href="/services/audio-music"
-          />
-          <ServiceCard 
-            number="05"
-            title="Creative Direction"
-            description="Full-spectrum creative leadership — I connect strategy, design, code, and content into one cohesive vision."
-            href="/services/creative-direction"
-            className="border-b"
-          />
+          <FadeIn delay={0.1}>
+            <ServiceCard 
+              number="01"
+              title="Digital Products"
+              description="End-to-end UI/UX design and full-stack development for web applications."
+              href="/services/digital-products"
+            />
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <ServiceCard 
+              number="02"
+              title="Brand & Identity"
+              description="Strategic brand development from naming and positioning to complete visual identity systems."
+              href="/services/brand-identity"
+            />
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <ServiceCard 
+              number="03"
+              title="Visual Content"
+              description="Photography and videography that tells your brand's story with cinematic quality."
+              href="/services/visual-content"
+            />
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <ServiceCard 
+              number="04"
+              title="Audio & Music"
+              description="Original music production, sound design, and audio branding for any medium."
+              href="/services/audio-music"
+            />
+          </FadeIn>
+          <FadeIn delay={0.5}>
+            <ServiceCard 
+              number="05"
+              title="Creative Direction"
+              description="Full-spectrum creative leadership — I connect strategy, design, code, and content into one cohesive vision."
+              href="/services/creative-direction"
+              className="border-b"
+            />
+          </FadeIn>
         </div>
       </section>
 
